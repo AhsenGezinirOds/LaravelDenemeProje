@@ -34,17 +34,7 @@ Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');
 
 //Admin
-Route::middleware('auth')->prefix('admin')->group(function (){
-Route::get('/', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
-
-Route::get('/category', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_category');
-Route::get('/category/add', [\App\Http\Controllers\Admin\HomeController::class, 'add'])->name('admin_category_add');
-Route::get('/category/update', [\App\Http\Controllers\Admin\HomeController::class, 'update'])->name('admin_category_update');
-Route::get('/category/delete', [\App\Http\Controllers\Admin\HomeController::class, 'destroy'])->name('admin_category_delete');
-Route::get('/category/show', [\App\Http\Controllers\Admin\HomeController::class, 'show'])->name('admin_category_show');
-
-
-});
+Route::get('/admin', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('adminhome');
 
 Route::middleware([
     'auth:sanctum',
