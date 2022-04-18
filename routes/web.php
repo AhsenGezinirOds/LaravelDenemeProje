@@ -52,7 +52,7 @@ Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('i
     Route::post('category/update/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'update'])->name('admin_category_update');
     Route::get('category/delete/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'destroy'])->name('admin_category_delete');
     Route::get('category/show',[\App\Http\Controllers\Admin\CategoryController::class,'show'])->name('admin_category_show');
-    Route::get('category/goster',[\App\Http\Controllers\Admin\CategoryController::class,'show'])->name('admin_category_show');
+    
 });
 
 //Product
